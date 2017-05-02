@@ -58,6 +58,80 @@
 - `-c`는 콘솔 창에 로그를 띄워주기 위한 옵션입니다.
 - `-l`은 다양한 플랫폼에서 확인을 한 번에 할 수 있도록 하는 옵션입니다.
 
+## 7. 프로젝트의 구성
+- node_modules
+
+    npm을 통해 설치된 package들이 저장되는 장소
+
+- platforms
+
+    실행할 예정인 플랫폼들(android, ios, browser 등)이 추가되어 있다.(윈도우의 경우 설치된 위치가 다를 수 있음)
+
+- plugins
+    
+    cordova를 통해 설치되는 플러그인들이 저장되는 장소
+
+- resources
+    
+    자원(ico, image 등)들을 관리하는 디렉토리
+
+- src
+
+    가장 중요한 부분. 실질적으로 소스코드를 작성할 때 사용하는 부분.
+
+- www
+
+    웹 관련한 부분으로, 결과물들을 확인할 수 있는 디렉토리
+
+- config.xml
+
+    cordova의 설정을 정하는 파일. widget 태그의 id 속성은 package name으로 app을 완전히 독립적으로 구분할 수 있는 이름. preference는 app 전체에 대한 설정들을 의미
+
+## 8. src 디렉토리의 구성
+
+- index.html
+
+    `<ion-app>` 태그는 실질적으로 App이 로딩이 되는 장소이다. 즉, App의 시작지점.
+
+- assets
+
+    정적인 파일들을 관리하는 디렉토리.
+
+- theme
+
+    디자인 구성을 위한 코드작성에 사용되는 디렉토리.
+
+> Tip: Component는 html, scss, typescript의 합으로 구성된다고 생각하면 쉽다.
+
+- app
+
+    app.component.ts, app.html, app.scss로 구성되어 있는 컴포넌트라고 생각할 수 있다. app.module.ts는 전체 app에 대한 내용이 들어 있는 파일이라고 생각할 수 있다. main.ts 의 경우 루트 컴포넌트에 붙이는 작업을 한다.
+
+- pages
+
+    초기에는 tabs라는 디렉토리를 통해서 abaout, contact, home 디렉토리를 볼 수 있는 구조이다.
+
+## 9. cordova란?
+
+> 웹 기술(html, css, js)를 통해 app을 개발할 수 있도록 해 준다.
+
+- ionic framework?
+
+    간단하게만 말하자면 cordova와 angular2js 그리고 Gulp 등을 묶어서 감싼 프레임워크라고 할 수 있다.
+
+- 아이오닉 자체가 특별하여 웹 기술 기반으로 app을 개발할 수 있도록 한다기보다는 핵심은 cordova에 있다.
+
+- camera나 accelerometer 등 웹 기술과는 동떨어진 플러그인들을 사용할 경우에 cordova plugin을 설치하여 사용한다.
+
+- "node_modules" vs "plugins"
+
+    __node_modules__ : javascript 라이브러리가 설치되는 장소
+
+    __plugins__ : cordova plugin들이 설치되는 장소    
+
+## 10. Angular js2 & Typescript
+
+
 # ERROR 발생시 조치법
 > bash on Ubuntu on Windows 로 해당 과정을 진행하면 많은 에러가 발생하는데 해결한 문제들의 조치사항들을 적어두었습니다.
 - 만약 커맨드 실행 후 "Failed to open browser: Command failed: xdg-open ~~" 와 같은 오류가 발생하면 bash에 몇 가지 커맨드가 설치되어 있지 않은 것이므로 아래의 커맨드를 이용하여 xdg-utils와 lynx, w3m을 설치해 주어야 합니다.
