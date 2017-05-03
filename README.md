@@ -182,9 +182,75 @@
         return Greeter;
     })
 
+## 11. Typescript 기본 문법
+
+### 11-1. 특징
+
+> Javascirpt that scales(확장 가능한 자바스크립트)
+
+- classes
+- modules
+- interfaces
+- generics
+- static typing(optional)
 
 
+    npm install -g typescript   // typescript 설치
 
+    tsc -v  // typescript 설치 및 버전 확인
+
+    tsc main.ts     // main.ts 파일을 main.js 파일로 변환
+
+### 11-2. Typescript 테스트
+
+- 필요한 파일들을 만들고 web browser에서 직접 확인
+- Typescript / Javascript Playground에서 직접 확인
+
+위 두 가지 방법이 있음. Playground 방식의 경우 따로 html 파일을 작성하지 않아도 되기 때문에, 확인하는 것이 편리하다.
+
+### 11-3. 변수(variable)
+
+> variable = space + name
+
+- 값을 저장하는 공간
+- 값에 이름을 줄 수 있다.
+
+기본적으로 typescript는 3개의 basic type을 가진다.
+
+- boolean
+- number
+- string
+
+* 작성 방식
+
+    var 변수명: 타입 = 값
+
+- any
+
+    any 타입으로 선언된 변수에는 무엇을 넣어도 상관없는 변수이다.
+
+- Sample Code
+>
+    var isDone: boolean = false;
+    var age: number = 23;
+    var myName: string = "name";
+    var notSure: any = "hello"
+
+    console.log(isDone);
+    console.log(age);
+    console.log(myName);
+    console.log(notSure);
+
+- null vs. undefined
+
+    null : 변수가 비어있다.
+
+    undefined : 비어있다는 명세조차 되어있지 않다.
+
+- collection
+>
+    var list: number[] = [1, 2, 3];
+    var list: Array<number> = [1, 2, 3];
 
 # ERROR 발생시 조치법
 > bash on Ubuntu on Windows 로 해당 과정을 진행하면 많은 에러가 발생하는데 해결한 문제들의 조치사항들을 적어두었습니다.
