@@ -252,6 +252,151 @@
     var list: number[] = [1, 2, 3];
     var list: Array<number> = [1, 2, 3];
 
+- function
+
+> 일련의 약속된 행동(action)을 지정해놓고(definition), 해당 사항들을 수행(call)하는 것
+
+- sample code
+>
+    function sayHello(message: string){
+        alert(message);
+    }
+    sayHello("hello");
+- 변수 ← 함수
+>
+    var f1 = function(i: number): number { return i * i; }
+    var f2 = function(i: number) { return i * i; }
+    var f3 = (i: number): number => { return i * i; }
+    var f4 = (i: number) => { return i * i; }
+    var f5 = (i: number) => i * i;
+
+- 조건문(conditions)
+> 특정 조건이 맞을 때 수행(if문, switch문). 일반적인 js 문법과 동일
+>
+    var isDone: boolean = true;
+    
+    if(isDone) {
+        console.log("Yes");
+    } else {
+        console.log("No");
+    }
+
+- 반복문(for, while)
+> 일반적인 js 문법과 동일, 향상된 for문이나 continue, break 키워드도 동일하게 사용 가능.
+
+- 오브젝트(Object)
+> OOP에서 이야기하는 오브젝트와는 약간의 차이가 있다. python의 dictionary나, java의 map과 유사하다고 할 수 있다. 여러 변수(혹은 함수)들이 구조화된 형태
+>
+    var emptyObject = {};
+    var personObject = {
+        firstName: "John",
+        lastName: "Smith"
+    };      // 각각의 변수를 member 혹은 property라고 부른다.
+
+    personObject["salary"] = 14000;
+
+    for(var member in personObject) {
+        if(personObject.hasOwnProperty(member)){
+            console.log("the member " + member + "of personObject is " + personObject[member]);
+        }
+    }
+
+- 인터페이스(interface)
+> Object에 대한 타입. 여러 개의 함수와 변수가 구조적으로 어떻게 결합되어야 하는지에 대한 약속.
+>
+    interface Person {
+        name: string;
+        age?: number;       // 물음표(?)가 들어가면 optional 값이다.
+        move(): void;
+    }
+
+    var Persoon1: Person = {
+        name: "John",
+        move: () =? {  }
+    }
+
+    var Persoon2: Person = {
+        name: "John",
+        age: 42,
+        move: () =? {  }
+    }
+
+    var Persoon3: Person = {    // Error!!
+        name: "John",
+        age: 42
+    }
+
+    interface searchFunc {
+        (source: string, substring: string): boolean;
+    }
+
+    var mySearch: SearchFunc;
+    mySearch = function(src: string, sub: string) {
+        return src.search(sub) != -1;
+    }
+
+- 클래스(class)
+> 실제 세계의 물체를 표현하는 데 사용. 정보와 행동. 인터페이스와의 차이점은 constructor가 있다는 점과, 내용을 반드시 작성해야 한다는 점이다.
+>
+    class Point {
+        x: number;
+
+        constructor(x: number, public y: number = 0) {
+            this.x = x;
+        }
+
+        dist() {
+            return Math.sqrt(this.x * this.x + this.y * this.y);
+        }
+
+        static origin = Point(0, 0);
+    }
+
+    var point1 = new Point(10, 20);
+    var point2 = new Point(25
+    // 위는 클래스
+
+    interface Point {
+        x: number;
+        y: number;
+
+        dist(): number;
+    }
+
+    var origin: Point = {
+        x: 0, y: 0,
+        dist: () => Math.sqrt(this.x * this.x + this.y * this.y);
+    }
+
+    var point1: Point = {
+        x: 10, y: 20,
+        dist: () => Math.sqrt(this.x * this.x + this.y * this.y);
+    }
+
+    var point2: Point = {
+        x: 25, y: 0,
+        dist: () => Math.sqrt(this.x * this.x + this.y * this.y);
+    }
+    // 위는 인터페이스
+>
+    인터페이스와 클래스는 각 활용부분에 맞추어 사용할 것
+
+- 콜백, 팝업(callback, popup)
+
+> 콜백 : 넘길 수 있는 실행 가능한 코드 조각. 원하는 시간이나 조건에 코드가 실행되길 바랄 때 사용.
+>
+    var callback = function(){
+        alert("callback was excuted!");
+    }
+
+    setTimeout(callback, 5000);
+
+> 팝업에는 아래와 같은 종류가 있다.
+>
+    alert("hello world");
+    prompt("hello world");  // 입력값을 리턴
+    confirm("hello world"); // OK, Cancel 값에 따라 boolean 값을 리턴
+
 # ERROR 발생시 조치법
 > bash on Ubuntu on Windows 로 해당 과정을 진행하면 많은 에러가 발생하는데 해결한 문제들의 조치사항들을 적어두었습니다.
 - 만약 커맨드 실행 후 "Failed to open browser: Command failed: xdg-open ~~" 와 같은 오류가 발생하면 bash에 몇 가지 커맨드가 설치되어 있지 않은 것이므로 아래의 커맨드를 이용하여 xdg-utils와 lynx, w3m을 설치해 주어야 합니다.
