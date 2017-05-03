@@ -1,5 +1,9 @@
 # Typescript Tutorial for ionic2
 
+- 본 내용은 아래 강좌를 참고하였습니다.
+
+    [아이오닉(ionic2) 개발을 위한 타입스크립트 기본 - 인프런(inflearn)](https://www.inflearn.com/course/%EC%95%84%EC%9D%B4%EC%98%A4%EB%8B%89-ionic2-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8/)
+
 ## 1. 시작
 
 - 아이오닉2 프레임워크란?
