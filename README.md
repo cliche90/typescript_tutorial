@@ -131,6 +131,60 @@
 
 ## 10. Angular js2 & Typescript
 
+### 10-1. Angular js2
+
+    js프레임워크 중 하나이며 구글이 관리중, 클라이언트 측 개발을 위해 필요한 프레임워크. 하나의 어플리케이션은 컴포넌트와 템플릿의 조합으로 작성, 컴포넌트들을 디펜던시 인젝션을 이용하여 컴포턴트에 필요한 것들을 디펜던시로 관리. 컴포넌트들은 directive 형태로 사용.
+    
+    정리하면 템플릿은 디자인적인 측면, 컴포넌트는 기능적인 측면으로 만들어, 템플릿을 재사용하는 방식으로 개발하도록 하는 것이 지향하는 바이다.
+
+> meta-data를 작성 → @Component와 같은 decorator를 통해 meta-data 작성 가능
+
+> class를 작성 → class = data + logic
+
+- meta-data 작성으로부터 만들어진 태그를 사용할 수 있다. 이러한 형태의 컴포넌트를 directive라고 볼 수 있다.
+
+### 10-2 Typescript
+
+    ms에서 관리중에 있으며, 기본 페이지에 보면 스케일 가능한 js라고들 많이 이야기 한다.
+
+    - 타입이 지정된 js의 superset(확장된 기능을 가짐)이라고 할 수 있다.
+
+    - 타입이 지정되기 때문에 에러를 매우 쉽게 찾아낼 수 있어, 개발하는 데에 편의를 제공한다.
+
+    - Type, OOP, Scalability(확장성)
+
+    - 장점만 있는 것은 아니나, 확장성이나 OOP 측면 등에서 장점을 가진다.
+
+    - js와의 가장 큰 차이는 type이 있는가 없는가이다. 그러나 ES6 js와 엄청 큰 차이가 있는 것이 아니기 때문에 type이 적용되는 js라고 생각해도 충분하다.
+
+    - ts
+
+    class Greeter {
+        greeting: string;
+        construct (message: string) {
+            this.greeting = messsage;
+        }
+        greet() {
+            return "Hello, " + this.greeting;
+        }
+    }
+
+
+    - js
+
+    var Greeter = (function(){
+        function Greeter(message){
+            this.greeting = message;
+        }
+        Greeter.prototype.greet = function() {
+            return "Hello, " + this.greeting;
+        }
+        return Greeter;
+    })
+
+
+
+
 
 # ERROR 발생시 조치법
 > bash on Ubuntu on Windows 로 해당 과정을 진행하면 많은 에러가 발생하는데 해결한 문제들의 조치사항들을 적어두었습니다.
